@@ -3,6 +3,10 @@
 from models.__init__ import CURSOR, CONN
 
 class Train:
+
+    # dictionary of objects saved to db
+    all = {}
+
     def __init__(self, name, type, id=None):
         self.id = id
         self.name = name
@@ -43,6 +47,8 @@ class Train:
         CURSOR.execute(sql, (self.name, self.type))
         CONN.commit()
         self.id = CURSOR.lastrowid
+        # Save the object in local dictionary using table row's PK as dictionary key
+        type(self).all[self.id] = self 
 
     @classmethod
     def create(cls, name, type):
@@ -69,3 +75,57 @@ class Train:
         """
         CURSOR.execute(sql, (self.id,))
         CONN.commit()
+    
+        # also delete the dictionary entry using the id as the key
+        del type(self).all[self.id]
+        # set the id to None
+        self.id = None
+
+    @classmethod 
+    def instance_from_db(cls,row):
+        """ Return a train object having attribute values from the table row """
+
+        # check dictionary for existing instance using rows primary key
+        train = cls.all.get(row[0])
+        if train:
+            # check attributes match row values in case local object was modified
+            train.name = row[1]
+            train.type = row[2]
+        else:
+            # it's not in the dictionary, create a new instance and add to dictionary
+            train = cls(row[1], row[2])
+            train.id = row[0]
+            cls.all[train.id] = train
+        return train
+    
+    @classmethod
+    def get_all(cls):
+        """ return a list containing a Train object for each row in trains table """
+        sql = """
+            SELECT *
+            FROM trains
+        """
+        rows = CURSOR.execute(sql).fetchall()
+        return [cls.instance_from_db(row) for row in rows]
+    
+    @classmethod
+    def find_by_id(cls, id):
+        """ Return a Train object corresponding to the table row matching the specified primary key"""
+        sql = """
+            SELECT *
+            FROM trains
+            WHERE id = ?
+        """
+        row = CURSOR.execute(sql, (id,)).fetchone()
+        return cls.instance_from_db(row) if row else None
+    
+    @classmethod
+    def find_by_name(cls, name):
+        """ Return a train object corresponding to the first table row matching specified name """
+        sql = """
+            SELECT *
+            FROM trains
+            WHERE name is ?
+        """
+        row = CURSOR.execute(sql, (name,)).fetchone()
+        return cls.instance_from_db(row) if row else None
