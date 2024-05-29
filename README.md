@@ -7,6 +7,7 @@ Welcome to Railyard Commander, CLI Edition
 
 To initialize the environment, type pipenv install
 Then to enter the shell, type pipenv shell
+You can run the CLI by typing the command "python lib/cli.py"
 
 ## Let's Play Railyard Commander!
 

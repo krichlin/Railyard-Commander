@@ -1,10 +1,10 @@
 # lib/cli.py
+#! /usr/bin/env python3
 
 from helpers import (
     exit_program,
     helper_1
 )
-
 
 def main():
     while True:
