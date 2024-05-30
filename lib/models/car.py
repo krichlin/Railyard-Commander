@@ -22,6 +22,41 @@ class Car:
             f"Description: {self.description}, >"
         )
     
+    @property 
+    def name(self):
+        return self._name  
+
+    @name.setter
+    def name(self, name):
+        if isinstance(name,str) and len(name):
+            self._name = name
+        else:
+            raise ValueError(
+                "Name must be a non-empty string"
+            )
+        
+    @property
+    def description(self):
+        return self._description 
+
+    @description.setter
+    def description(self, description):
+        if isinstance(description, str) and len(description):
+            self._description = description
+        else:
+            raise ValueError("Description must be a non-empty string" )
+
+    @property
+    def train_id(self):
+        return self._train_id
+
+    @train_id.setter
+    def train_id(self, train_id):
+        if type(train_id) is int and Train.find_by_id(train_id):
+            self._train_id = train_id
+        else:
+            raise ValueError("Train ID must reference a train in the database")
+    
     @classmethod
     def create_table(cls):
         """ Create a new table for attributes of car instances """

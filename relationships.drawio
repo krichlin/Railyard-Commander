@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e">
+    <diagram id="pfTeVBzgbxhKtI_3g_D4" name="Page-1">
+        <mxGraphModel dx="514" dy="275" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Train" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="150" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="id: INTEGER (P KEY)&lt;br&gt;name: TEXT&lt;br&gt;type: TEXT&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="3">
+                    <mxGeometry x="10" y="30" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Car" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="355" y="40" width="140" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="id: INTEGER (P KEY)&lt;br&gt;name: TEXT&lt;br&gt;description: TEXT&lt;br&gt;train_id: INTEGER&lt;br&gt;(FOREIGN KEY pointing to Train's Primary Key:id)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="8">
+                    <mxGeometry x="10" y="30" width="120" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="8">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="240" y="130" as="sourcePoint"/>
+                        <mxPoint x="190" y="78" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="" style="shape=flexArrow;endArrow=classic;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3" target="8">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="190" y="130" as="sourcePoint"/>
+                        <mxPoint x="290" y="80" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="each Train can have many cars (has many)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="160" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="each Car belongs to a &lt;br&gt;single train (has one)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="40" width="170" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -15,6 +15,28 @@ class Train:
     def __repr__(self):
         return f"<Train {self.id}: {self.name}, {self.type}"
     
+    @property
+    def name(self):
+        return self._name 
+    
+    @name.setter
+    def name (self, name):
+        if isinstance(name,str) and len(name):
+            self._name = name
+        else:
+            raise ValueError("Name must be a non-empty string")
+        
+    @property
+    def type(self):
+        return self._type
+    
+    @type.setter
+    def type(self, type):
+        if isinstance(type, str) and len(type):
+            self._type = type
+        else:
+            raise ValueError("Type must be a non-empty string")
+    
     @classmethod
     def create_table(cls):
         """ Create new table for Trains """
