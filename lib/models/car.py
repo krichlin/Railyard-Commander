@@ -101,7 +101,7 @@ class Car:
         """ return a car object having the attribute values from the table row """
 
         # check dictionary for existing instance using row's primary key
-        car = cls.all.get(car[0])
+        car = cls.all.get(row[0])
         if car:
             # ensure attributes match row values in case local instance was modified
             car.name = row[1]
@@ -113,8 +113,7 @@ class Car:
             car.id = row[0]
             cls.all[car.id] = car
         return car
-
-
+    
     @classmethod
     def get_all(cls):
         """ Return a list containing 1 car object per table row """

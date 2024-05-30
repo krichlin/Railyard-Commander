@@ -35,9 +35,12 @@ import ipdb
 # print(train_1)
 
 def reset_database():
+
     # Reinitialize all the tables here
-    Car.drop_table()
+
     Train.drop_table()
+    Car.drop_table()
+
     Train.create_table()
     Car.create_table()
 
@@ -50,6 +53,7 @@ def reset_database():
     car_1 = Car.create("Mail Car", "Pullman Red", mail_1.id)
     car_2 = Car.create("Engine", "Stevenson Rocket", cargo_1.id)
     car_3 = Car.create("Passenger Car", "Pullman Special", passenger_1.id)
+
 
 reset_database() # reset the database
 ipdb.set_trace()
