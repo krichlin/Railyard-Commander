@@ -55,16 +55,30 @@ def helper_7():
     print(f"{cars_on_train}")
 
 def helper_8():
-    print("You chose: Add a Car to a Train")
+    print("You chose: Add a New Train")
+    input_name = input("Enter Train Name: ")
+    input_type = input("Enter Train Type: ")
+    new_train = Train.create(input_name, input_type)
+    print(f"New Train {new_train} Created!")
 
 def helper_9():
-    print("You chose: Remove a Car from a Train")
-
-def helper_10():
-    print("You chose: Add a New Train")
-
-def helper_11():
     print("You chose: Remove a Train by ID")
+    # input_id = 0
+    input_id = input("Enter Train ID to Remove: ")
+    removed_train = Train.find_by_id(input_id)
+    print(f"You removed the Train {removed_train}.")
+    removed_train.delete()
+
+    # removed_train.delete()
+    # removed_train = Train.delete(input_id)
+
+
+# def helper_10():
+#     print("You chose: Add a Car to a Train")
+#     # print(f"Car {} added to Train!")
+
+# def helper_11():
+#     print("You chose: Remove a Car from a Train")
 
 def exit_program():
     print("Goodbye!")

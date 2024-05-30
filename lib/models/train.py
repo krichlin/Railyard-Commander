@@ -89,6 +89,7 @@ class Train:
         CURSOR.execute(sql, (self.name, self.type, self.id))
         CONN.commit();
 
+    #@classmethod
     def delete(self):
         """ Delete the table row corresponding to the curreint Train instance """
         sql = """

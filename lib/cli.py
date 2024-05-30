@@ -12,7 +12,8 @@ from helpers import (
     helper_7,
     helper_8,
     helper_9,
-    helper_10
+    # helper_10,
+    # helper_11
 )
 
 def main():
@@ -39,8 +40,10 @@ def main():
             helper_8()
         elif choice == "9":
             helper_9()
-        elif choice == "10":
-            helper_10()
+        # elif choice == "10":
+        #     helper_10()
+        # elif choice == "11":
+        #     helper_11()
         else:
             print("Invalid choice")
 
@@ -55,10 +58,10 @@ def menu():
     print("5. Add a New Train")
     print("6. Show Train by Name")
     print("7. Show all Cars on a Train")
-    print("8. Add a Car to a Train")
-    print("9. Remove a Car from a Train")
-    print("10. Add a New Train")
-    print("11. Remove a Train by ID")
+    print("8. Add a New Train")
+    print("9. Remove a Train by ID")
+    # print("10. Add a Car to a Train")
+    # print("11. Remove a Car from a Train")
 
 if __name__ == "__main__": #only run this script if called from command line
     main() 
