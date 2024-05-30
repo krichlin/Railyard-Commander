@@ -180,3 +180,6 @@ class Car:
         """
         row = CURSOR.execute(sql, (name,)).fetchone()
         return cls.instance_from_db(row) if row else None
+    
+    # @classmethod
+    # def find_by_description(cls)

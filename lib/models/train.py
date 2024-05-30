@@ -154,11 +154,11 @@ class Train:
     
     def cars(self):
         """ returns a list of cars asasociated with current train """
-        from car import Car
+        from models.car import Car
         sql = """
             SELECT * from cars
             WHERE train_id = ?
         """
-        CURSOR.execute(sql, (self.id,),)
+        CURSOR.execute(sql, (self),)
         rows = CURSOR.fetchall()
         return [Car.instance_from_db(row) for row in rows]
