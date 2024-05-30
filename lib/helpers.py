@@ -4,7 +4,7 @@ from models.car import Car
 
 # don't forget to give all these methods better names
 
-def helper_1():
+def view_all_trains():
     print("You chose: View All Trains")
     all_the_trains = Train.get_all() # iterate through to make pretty?
     # [row for row in allthetrains]?
@@ -12,41 +12,41 @@ def helper_1():
     # for i in allthetrains:?
     print(f"{all_the_trains}>")
 
-def helper_2():
+def view_all_cars():
     print("You chose: View All Cars") # iterate through to make it pretty?
     all_the_cars = Car.get_all()    
     print("All the Cars: \n")
     print(f"{all_the_cars}")
 
-def helper_3():
-    print("You chose: Show Train by ID")
+def view_train_by_id():
+    print("You chose: View Train by ID")
     input_id = input("Enter Train ID: ")
     train_by_id = Train.find_by_id(input_id)
     print("Train by ID")
     print(f"{train_by_id}")
 
-def helper_4():
-    print("You chose: Show Car by ID")
+def view_car_by_id():
+    print("You chose: View Car by ID")
     input_id = input("Enter Car ID: ")
     car_by_id = Car.find_by_id(input_id)
     print("Car by ID")
     print(f"{car_by_id}")
 
-def helper_5():
+def add_new_train():
     print("You chose: Add a new Train")
     input_name = input("Enter New Train Name: ")
     input_type = input("Enter New Train Type: ")
     new_train = Train.create(input_name, input_type)
     print(f"New Train {new_train} Added!")
 
-def helper_6():
-    print("You chose: Show Train by name")
+def view_train_by_name():
+    print("You chose: View Train by name")
     input_name = input("Enter Train Name: ")
     train_by_name = Train.find_by_name(input_name)
     print("Train by Name: ")
     print(f"{train_by_name}")
 
-def helper_7():
+def view_all_cars_on_train():
     print("You chose: Show all Cars on a Train")
     input_id = 0
     input_id = input("Enter Train ID: ")
@@ -54,14 +54,14 @@ def helper_7():
     print("Cars on this Train: ")
     print(f"{cars_on_train}")
 
-def helper_8():
+def add_new_train():
     print("You chose: Add a New Train")
     input_name = input("Enter Train Name: ")
     input_type = input("Enter Train Type: ")
     new_train = Train.create(input_name, input_type)
     print(f"New Train {new_train} Created!")
 
-def helper_9():
+def remove_train_by_id():
     print("You chose: Remove a Train by ID")
     # input_id = 0
     input_id = input("Enter Train ID to Remove: ")
@@ -73,11 +73,11 @@ def helper_9():
     # removed_train = Train.delete(input_id)
 
 
-# def helper_10():
+# def add_car_to_train():
 #     print("You chose: Add a Car to a Train")
 #     # print(f"Car {} added to Train!")
 
-# def helper_11():
+# def remove_car_from_train():
 #     print("You chose: Remove a Car from a Train")
 
 def exit_program():

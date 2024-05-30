@@ -3,17 +3,17 @@
 
 from helpers import (
     exit_program,
-    helper_1,
-    helper_2,
-    helper_3,
-    helper_4,
-    helper_5,
-    helper_6,
-    helper_7,
-    helper_8,
-    helper_9,
-    # helper_10,
-    # helper_11
+    view_all_trains,
+    view_all_cars,
+    view_train_by_id,
+    view_car_by_id,
+    add_new_train,
+    view_train_by_name,
+    view_all_cars_on_train,
+    add_new_train,
+    remove_train_by_id,
+    # add_car_to_train,
+    # remove_car_from_train
 )
 
 def main():
@@ -23,27 +23,27 @@ def main():
         if choice == "0":
             exit_program()
         elif choice == "1":
-            helper_1()
+            view_all_trains()
         elif choice == "2":
-            helper_2()
+            view_all_cars()
         elif choice == "3":
-            helper_3()
+            view_train_by_id()
         elif choice == "4":
-            helper_4()
+            view_car_by_id()
         elif choice == "5":
-            helper_5()
+            add_new_train()
         elif choice == "6":
-            helper_6()
+            view_train_by_name()
         elif choice == "7":
-            helper_7()
+            view_all_cars_on_train()
         elif choice == "8":
-            helper_8()
+            add_new_train()
         elif choice == "9":
-            helper_9()
+            remove_train_by_id()
         # elif choice == "10":
-        #     helper_10()
+        #     add_car_to_train()
         # elif choice == "11":
-        #     helper_11()
+        #     remove_car_from_train()
         else:
             print("Invalid choice")
 
@@ -54,11 +54,11 @@ def menu():
     print("0. Exit the program")
     print("1. View All Trains")
     print("2. View All Cars")
-    print("3. Show Train by ID")
-    print("4. Show Car by ID")
+    print("3. View Train by ID")
+    print("4. View Car by ID")
     print("5. Add a New Train")
-    print("6. Show Train by Name")
-    print("7. Show all Cars on a Train")
+    print("6. View Train by Name")
+    print("7. View all Cars on a Train")
     print("8. Add a New Train")
     print("9. Remove a Train by ID")
     # print("10. Add a Car to a Train")
