@@ -129,3 +129,14 @@ class Train:
         """
         row = CURSOR.execute(sql, (name,)).fetchone()
         return cls.instance_from_db(row) if row else None
+    
+    def cars(self):
+        """ returns a list of cars asasociated with current train """
+        from car import Car
+        sql = """
+            SELECT * from cars
+            WHERE train_id = ?
+        """
+        CURSOR.execute(sql, (self.id,),)
+        rows = CURSOR.fetchall()
+        return [Car.instance_from_db(row) for row in rows]

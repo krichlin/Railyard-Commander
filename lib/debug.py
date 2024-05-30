@@ -3,6 +3,8 @@
 
 from models.__init__ import CONN, CURSOR
 from models.train import Train
+from models.car import Car
+
 import ipdb
 
 # passenger_express = Train("Passenger Express", "Stephenson Rocket")
@@ -34,8 +36,10 @@ import ipdb
 
 def reset_database():
     # Reinitialize all the tables here
+    Car.drop_table()
     Train.drop_table()
     Train.create_table()
+    Car.create_table()
 
     # Fill them with some filler data
     passenger_1 = Train.create("Passenger Express", "Stephenson Rocket")
@@ -43,6 +47,9 @@ def reset_database():
     mail_1 = Train.create("Mail Train", "4-2-0 Prussian")
     passenger_2 = Train.create("Passenger All Stops", "Trevithick-1")
 
+    car_1 = Car.create("Mail Car", "Pullman Red", mail_1.id)
+    car_2 = Car.create("Engine", "Stevenson Rocket", cargo_1.id)
+    car_3 = Car.create("Passenger Car", "Pullman Special", passenger_1.id)
 
 reset_database() # reset the database
 ipdb.set_trace()
