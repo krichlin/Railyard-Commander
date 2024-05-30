@@ -49,7 +49,8 @@ def main():
 
 
 def menu():
-    print("Please select an option:")
+    print("WELCOME TO RAILYARD COMMANDER!")
+    print("Please Select an Option: ")
     print("0. Exit the program")
     print("1. View All Trains")
     print("2. View All Cars")
