@@ -7,8 +7,7 @@
 ## Installation Instructions
 
 - To initialize the environment, type `pipenv install`
-- Then to enter the python shell, (optional) type `pipenv shell`
-- You should populate the database with some test data by running `python lib/debug.py`
+- You should populate the database with some test data by running `python lib/seed.py`
 - You can run the CLI by typing the command `python lib/cli.py`
 
 ## Let's Play Railyard Commander!
@@ -21,7 +20,9 @@ Then you're off to the races!
 
 ## Details on the Files in the Project
 
-- lib/debug.py - A debug file to assist in testing our class methods.  You should run `python lib/debug.py` once to initialize the databse and populate it with some sample data.
+- lib/debug.py - A debug file to assist in testing our class methods.  
+
+- lib/seed.py You should run `python lib/seed.py` once to initialize the databse and populate it with some sample data.
 
 - lib/cli.py - Run `python lib/cli.py` to start the main program.  This file contains our menu and will accept user input.  You will be presented with a menu of options.  The various options will allow you to View all Trains, View all Cars, show Trains by ID or Name, Show cars by ID, show all Cars on a Train, and Remove a Train.
 
